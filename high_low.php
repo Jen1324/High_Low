@@ -1,8 +1,8 @@
-<?php
+ <?php
 
-fwrite(STDOUT, 'Guess a number?');
+fwrite(STDOUT, "Guess a number between {$argv[1]} and {$argv[2]}.");
 
-$number = mt_rand (1, 10);
+$number = mt_rand($argv[1], $argv[2]);
 
 $guess = (int) fgets(STDIN);
 
