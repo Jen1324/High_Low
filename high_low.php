@@ -1,4 +1,4 @@
- <?php
+<?php
 
 if (!is_numeric($argv[1]) || !is_numeric($argv[2])) {
     echo "I have no idea what you're talking about, buddy.\n";
