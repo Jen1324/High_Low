@@ -1,5 +1,11 @@
  <?php
 
+if (!is_numeric($argv[1]) || !is_numeric($argv[2])) {
+	echo "I have no idea what you're talking about, buddy.\n"; #jk you're not my buddy
+	exit(1);
+}
+
+
 fwrite(STDOUT, "Guess a number between {$argv[1]} and {$argv[2]}.");
 
 $number = mt_rand($argv[1], $argv[2]);
@@ -10,17 +16,17 @@ $total = 1;
 
 while ($guess != $number) {
 
-	if ($guess <= $number) { 
+	if ($guess < $number) { 
 		fwrite(STDOUT, "Higher\n");
-			$guess = (int) fgets(STDIN);
+		$guess = (int) fgets(STDIN);
 
-	} 	elseif ($guess >= $number) { 
+	} 	elseif ($guess > $number) { 
 		fwrite(STDOUT, "Lower\n");
-			$guess = (int) fgets(STDIN);
+		$guess = (int) fgets(STDIN);
 
  	} //	elseif ($guess == $number) { 
 
- 			$total++;  
+	$total++;  
 
 }
 
